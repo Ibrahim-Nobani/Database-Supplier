@@ -1,0 +1,125 @@
+create database supplierdb;
+use supplierdb;
+create table supplier( 
+sname varchar(32), 
+supplierID int, 
+address varchar(32), 
+phone int, 
+primary key(supplierID));
+
+create table supplyOrder(
+supplierID int, 
+orderID int , 
+requestDate date,   
+primary key (orderID),
+foreign key (supplierID) references supplier (supplierID)
+ON DELETE set null
+on update cascade
+);
+
+create table itemsRequested (
+supplierID int, 
+orderID int, 
+itemName varchar(32),
+itemID int,
+copiesNumber int,
+primary key(orderID,itemID),
+foreign key (supplierID) references supplier (supplierID)
+ON DELETE set null
+on update cascade, 
+foreign key (orderID) references supplyOrder(orderID)
+ON DELETE CASCADE
+on update cascade);
+
+create table orderSupplied(
+supplierID int, 
+orderID int , 
+requestDate date,
+suppliedDate date,   
+primary key (orderID),
+foreign key (supplierID) references supplier (supplierID)
+ON DELETE set null
+on update cascade
+);
+create table itemsSupplied (
+supplierID int, 
+orderID int, 
+itemName varchar(32),
+itemID int,
+copiesNumber int,
+price double,
+primary key(orderID,itemID),
+foreign key (supplierID) references supplier (supplierID)
+ON DELETE set null
+on update cascade,
+foreign key (orderID) references orderSupplied(orderID)
+ON DELETE CASCADE
+on update cascade);
+
+create table users(
+email varchar(32),
+password varchar(32),
+primary key(email,password)
+);
+insert into users values ("ibra","123");
+insert into supplier values ("Warner Brothers", 001, "Gotham", 0123456);
+insert into supplier values ("Disney", 002, "New York", 0777777);
+insert into supplier values ("Amazon", 003, "LA", 0123456);
+insert into supplier values ("Netflix", 004, "Goth", 04444444);
+insert into supplier values ("HBO", 005, "New DD", 0155555);
+insert into supplier values ("Paramount", 006, "NY", 01666666);
+insert into supplyOrder values (1,1,'2001-9-28');
+insert into supplyOrder values (2,4,'2021-1-17');
+insert into supplyOrder values (3,5,'2022-2-2');
+insert into supplyOrder values (4,6,'2020-3-8');
+insert into supplyOrder values (5,2,'2001-9-28');
+insert into supplyOrder values (4,3,'2001-9-28');
+insert into itemsRequested values (2,4,'Star Wars',1,50);
+insert into itemsRequested values (2,4,'The mandalorian',2,40);
+insert into itemsRequested values (2,4,'The book',3,30);
+insert into itemsRequested values (2,4,'Rogue',4,20);
+insert into itemsRequested values (1,1,'godfather 1',10,50);
+insert into itemsRequested values (1,1,'godfather 2',20,50);
+insert into itemsRequested values (1,1,'godfather 3',30,50);
+insert into itemsRequested values (1,1,'LOTR',11,50);
+insert into itemsRequested values (3,5,'Lord Of The Rings 1',12,100);
+insert into itemsRequested values (3,5,'Lord Of The Rings 2',13,10);
+insert into itemsRequested values (3,5,'Lord Of The Rings 3',14,70);
+insert into itemsRequested values (4,6,'The Hobbit 1',15,100);
+insert into itemsRequested values (4,6,'The Hobbit 2',16,80);
+insert into itemsRequested values (4,6,'The Hobbit 3',17,110);
+insert into itemsRequested values (4,3,'Mindhunter',100,105);
+insert into itemsRequested values (4,3,'Dark',101,19);
+insert into itemsRequested values (4,3,'Daredevil',102,90);
+insert into itemsRequested values (5,2,'Game Of Thrones',103,105);
+insert into itemsRequested values (5,2,'The Sopranos',104,19);
+insert into itemsRequested values (5,2,'True Detective',105,90);
+
+insert into orderSupplied values (1,1,'2001-9-28','2002-1-2');
+insert into orderSupplied values (2,4,'2021-1-17','2021-3-1');
+insert into orderSupplied values (3,5,'2022-2-2','2022-2-9');
+insert into orderSupplied values (4,6,'2020-3-8','2020-5-4');
+insert into orderSupplied values (5,2,'2001-9-28','2001-12-7');
+insert into orderSupplied values (4,3,'2001-9-28','2002-1-6');
+
+insert into itemsSupplied values (2,4,'Star Wars',1,40,200);
+insert into itemsSupplied values (2,4,'The mandalorian',2,30,150);
+insert into itemsSupplied values (2,4,'The book',3,30,150);
+insert into itemsSupplied values (2,4,'Rogue',4,20,100);
+insert into itemsSupplied values (1,1,'godfather 1',10,45,225);
+insert into itemsSupplied values (1,1,'godfather 2',20,42,210);
+insert into itemsSupplied values (1,1,'godfather 3',30,44,220);
+insert into itemsSupplied values (1,1,'LOTR',11,50,500);
+insert into itemsSupplied values (3,5,'Lord Of The Rings 1',12,90,450);
+insert into itemsSupplied values (3,5,'Lord Of The Rings 2',13,10,50);
+insert into itemsSupplied values (3,5,'Lord Of The Rings 3',14,50,250);
+insert into itemsSupplied values (4,6,'The Hobbit 1',15,100,500);
+insert into itemsSupplied values (4,6,'The Hobbit 2',16,80,400);
+insert into itemsSupplied values (4,6,'The Hobbit 3',17,90,450);
+insert into itemsSupplied values (4,3,'Mindhunter',100,105,525);
+insert into itemsSupplied values (4,3,'Dark',101,19,95);
+insert into itemsSupplied values (4,3,'Daredevil',102,80,400);
+insert into itemsSupplied values (5,2,'Game Of Thrones',103,100,500);
+insert into itemsSupplied values (5,2,'The Sopranos',104,10,50);
+insert into itemsSupplied values (5,2,'True Detective',105,70,350);
+

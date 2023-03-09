@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="523.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller3">
+   <children>
+      <TextField fx:id="orderIdADD" layoutX="178.0" layoutY="41.0" promptText="Order ID" />
+      <Button layoutX="14.0" layoutY="85.0" mnemonicParsing="false" onAction="#addRequestBUTTON" prefHeight="45.0" prefWidth="131.0" style="-fx-background-color: yellow;" text="Add Order" />
+      <Line endX="408.0" layoutX="115.0" layoutY="135.0" startX="-115.0" />
+      <TextField fx:id="itemNameADD" layoutX="29.0" layoutY="143.0" promptText="Item Name" />
+      <TextField fx:id="itemIdADD" layoutX="29.0" layoutY="200.0" promptText="Item ID" />
+      <TextField fx:id="copiesNumADD" layoutX="29.0" layoutY="256.0" promptText="Copies Number" />
+      <ComboBox fx:id="supplierIdADD" layoutX="14.0" layoutY="41.0" prefWidth="150.0" promptText="Supplier ID" />
+      <DatePicker fx:id="requestDateADD" layoutX="337.0" layoutY="41.0" promptText="Request Date" />
+      <Button layoutX="246.0" layoutY="159.0" mnemonicParsing="false" onAction="#addItemBUTTON" prefHeight="54.0" prefWidth="161.0" style="-fx-background-color: yellow;" text="Add Item to Order" />
+      <DatePicker fx:id="suppliedDateADD" layoutX="337.0" layoutY="72.0" promptText="Supplied Date" />
+      <TextField fx:id="priceADD" layoutX="29.0" layoutY="306.0" promptText="price" />
+      <Text layoutX="32.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*If you wish to add Items to an existing order." />
+      <Text layoutX="32.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Just put the order ID above and start adding items." />
+   </children>
+</Pane>

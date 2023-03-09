@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="searchField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="703.0" style="-fx-background-color: purple; -fx-border-color: gold;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <TableView fx:id="myTable" editable="true" layoutX="14.0" layoutY="14.0" prefHeight="393.0" prefWidth="508.0">
+         <columns>
+            <TableColumn fx:id="snameColumn" onEditCommit="#updateSname" prefWidth="118.0" text="Supplier Name" />
+            <TableColumn fx:id="idColumn" onEditCommit="#updateID" prefWidth="106.0" text="Supplier ID" />
+            <TableColumn fx:id="addressColumn" onEditCommit="#updateAddress" prefWidth="99.0" text="Address" />
+            <TableColumn fx:id="phoneColumn" onEditCommit="#updatePhone" prefWidth="106.0" text="Phone" />
+            <TableColumn fx:id="deleteColumn" prefWidth="78.0" />
+         </columns></TableView>
+      <Button fx:id="RefreshTable" layoutX="538.0" layoutY="23.0" mnemonicParsing="false" onAction="#RefreshTable" prefHeight="49.0" prefWidth="144.0" style="-fx-background-color: yellow;" text="Upload/Refresh Table" />
+      <TextField fx:id="search" layoutX="536.0" layoutY="98.0" promptText="Search" />
+   </children>
+</Pane>

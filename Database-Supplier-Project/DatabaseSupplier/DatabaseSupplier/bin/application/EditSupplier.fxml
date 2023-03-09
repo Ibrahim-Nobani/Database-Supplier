@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: purple;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <TextField fx:id="snameADD" layoutX="51.0" layoutY="54.0" prefHeight="25.0" prefWidth="195.0" promptText="Supplier Name" />
+      <TextField fx:id="idADD" layoutX="51.0" layoutY="117.0" prefHeight="25.0" prefWidth="195.0" promptText="Supplier ID" />
+      <TextField fx:id="addressADD" layoutX="51.0" layoutY="175.0" prefHeight="25.0" prefWidth="195.0" promptText="Address" />
+      <TextField fx:id="phoneADD" layoutX="51.0" layoutY="237.0" prefHeight="25.0" prefWidth="195.0" promptText="Phone" />
+      <Button fx:id="AddSupplier" layoutX="318.0" layoutY="41.0" mnemonicParsing="false" onAction="#addSupplierBUTTON" prefHeight="38.0" prefWidth="254.0" style="-fx-background-color: yellow;" text="ADD" />
+   </children>
+</Pane>

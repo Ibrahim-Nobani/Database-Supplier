@@ -1,0 +1,5 @@
+Add user libraries, sql connecter and lib attached with the file.
+then add them to the project along with the javaFXSDK that comes with eclipse.
+Then:
+This should be added to the VM arguments in main (put your javafx lib path).
+--module-path "C:\Program Files\javafx-sdk-11.0.2\lib" --add-modules javafx.controls,javafx.fxml

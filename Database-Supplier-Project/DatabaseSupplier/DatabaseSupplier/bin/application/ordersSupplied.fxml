@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller3">
+   <children>
+      <TableView fx:id="SuppliedTable" layoutX="8.0" layoutY="35.0" prefHeight="264.0" prefWidth="497.0">
+        <columns>
+          <TableColumn fx:id="suppliedOrderIdColumn" onEditCommit="#updateID" prefWidth="75.0" text="Order ID" />
+          <TableColumn fx:id="suppliedIDColumn" onEditCommit="#updateSupplierID" prefWidth="75.0" text="Supplier ID" />
+            <TableColumn fx:id="requestDateColumn" onEditCommit="#updateRequestDate" prefWidth="96.0" text="Request Date" />
+            <TableColumn fx:id="suppliedDateColumn" onEditCommit="#updateSuppliedDate" prefWidth="91.0" text="Supplied Date" />
+            <TableColumn fx:id="billColumn" prefWidth="88.0" text="View Bill" />
+            <TableColumn fx:id="suppliedDeleteColumn" prefWidth="75.0" text="Delete" />
+        </columns>
+      </TableView>
+      <Button layoutX="520.0" layoutY="56.0" mnemonicParsing="false" onAction="#RefreshSuppliedTable" prefHeight="47.0" prefWidth="110.0" text="Refresh" />
+      <TextField fx:id="search" layoutX="513.0" layoutY="123.0" prefHeight="25.0" prefWidth="125.0" promptText="search" />
+   </children>
+</Pane>
